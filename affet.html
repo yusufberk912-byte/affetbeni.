@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aşkım Beni Affet</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        #evetBtn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #hayirBtn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gif-container img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHJmYm1ndXJ4Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3R5Z3ImZXA9djFfaW50ZXJuYWxfZ2lmX2J5X2lkJmN0PWc/c76IJLufpNUMo/giphy.gif" alt="Üzgün">
+    </div>
+
+    <h1>Aşkım beni affeder misin? ❤️</h1>
+
+    <div class="buttons">
+        <button id="evetBtn" onclick="affedildi()">Evet</button>
+        <button id="hayirBtn" onmouseover="buyut()" onclick="buyut()">Hayır</button>
+    </div>
+
+    <script>
+        let fontSize = 18;
+        let padding = 15;
+
+        function buyut() {
+            fontSize += 20; // Her hayırda yazı boyutu artar
+            padding += 10;  // Her hayırda buton genişler
+            
+            const evetBtn = document.getElementById('evetBtn');
+            evetBtn.style.fontSize = fontSize + 'px';
+            evetBtn.style.padding = padding + 'px ' + (padding * 2) + 'px';
+            
+            // Hayır butonunun yerini rastgele değiştirerek işi zorlaştırabiliriz (Opsiyonel)
+            const hayirBtn = document.getElementById('hayirBtn');
+            hayirBtn.style.position = 'absolute';
+            hayirBtn.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+            hayirBtn.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+        }
+
+        function affedildi() {
+            document.body.innerHTML = `
+                <h1 style="color: #d63384;">Yaşasın! Seni çok seviyorum! ❤️</h1>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXp6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6ZmN0PWc/KztT2c4u8mYYUiMKdJ/giphy.gif">
+            `;
+        }
+    </script>
+</body>
+</html>
